@@ -48,7 +48,7 @@ class APIKeyManager(ABC):
             cls._instance._initialized = False
         return cls._instance
 
-    def __init__(self, api_key: Optional[str] = None) -> None:
+    def __init__(self, api_config_path: str, api_key: Optional[str] = None) -> None:
         """
         Initialise the APIKeyManager with an optional API key. If no key is provided, one will be set automatically.
 
@@ -58,6 +58,8 @@ class APIKeyManager(ABC):
         """
         if self._initialized:
             return
+
+        self.STATE_FILE = api_config_path
 
         self.active_keys, self.expired_keys = self.load_api_keys(api_limit=self.API_LIMIT)
         self.ensure_active_keys()
