@@ -1,7 +1,7 @@
 from .fetch_financial import FinancialDataFetcher
-from .fetch_sentiment import SentimentData
-from .fetch_stock import StockData
+from .fetch_sentiment import NewsSentimentFetcher
+from .fetch_stock import StockPriceFetcher
 
 __all__ = [
-    FinancialDataFetcher, SentimentData, StockData,
+    FinancialDataFetcher, NewsSentimentFetcher, StockPriceFetcher,
 ]
