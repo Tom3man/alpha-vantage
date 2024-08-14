@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "alpha-vantage"
+version = "0.1.0"
+description = "Repository for interacting with the Alpha Vantage API"
+authors = ["Tom <tomrfreeman3@gmail.com>"]
+readme = "README.md"
+packages = [{include = "alpha_vantage"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+scipy = "^1.12.0"
+pandas = "^2.2.1"
+numpy = "^1.26.4"
+pytest = "^8.1.1"
+requests = "^2.31.0"
+sqlite_forge = {git = "https://github.com/Tom3man/sqlite-forge.git"}
+orb = {git = "https://github.com/Tom3man/orb-weaver.git"}
+click = "^8.1.7"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
